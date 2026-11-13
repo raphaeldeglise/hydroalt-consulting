@@ -341,8 +341,8 @@
                 <p class="text-gray-600 mt-2" id="form-sub">Formulez votre besoin d'inspection en usine ou de contrôle qualité d'alternateurs.</p>
             </div>
 
-            <!-- Formulaire relié à Formspree -->
-            <form id="inspection-form" action="https://formspree.io/f/mkjrobqv" method="POST" class="bg-gray-50 p-8 rounded-2xl border border-gray-200 shadow-sm space-y-6" onsubmit="submitForm(event)">
+            <!-- Formulaire relié nativement à Formspree -->
+            <form id="inspection-form" action="https://formspree.io/f/mkjrobqv" method="POST" class="bg-gray-50 p-8 rounded-2xl border border-gray-200 shadow-sm space-y-6">
                 <div class="grid sm:grid-cols-2 gap-6">
                     <div>
                         <label class="block text-xs font-bold text-gray-700 uppercase mb-2" id="lbl-name">Nom complet *</label>
@@ -378,10 +378,6 @@
                     Envoyer la demande d'expertise
                 </button>
             </form>
-
-            <div id="form-success" class="hidden mt-6 p-4 bg-green-50 border border-green-200 text-green-800 rounded-lg text-center font-medium">
-                Votre demande a bien été envoyée. HydroAlt Consulting vous recontactera sous 24h.
-            </div>
         </div>
     </section>
 
@@ -523,7 +519,6 @@
                 lblMsg: "Détails de la mission (Projet, site, planning)",
                 inputMsgPh: "Ex: Inspection visuelle et essais BT/HT pour alternateurs...",
                 formBtn: "Envoyer la demande d'expertise",
-                formSuccess: "Votre demande a bien été envoyée. HydroAlt Consulting vous recontactera sous 24h.",
 
                 // Footer
                 footerDesc: "Expertise technique indépendante dédiée au suivi de fabrication, au contrôle qualité, inspections visuelles et essais de recette d'alternateurs hydroélectriques.",
@@ -637,7 +632,6 @@
                 lblMsg: "Mission Details (Project, location, schedule)",
                 inputMsgPh: "E.g.: Visual inspection and LV/HV testing for generators...",
                 formBtn: "Submit Expertise Request",
-                formSuccess: "Your request has been successfully sent. HydroAlt Consulting will contact you within 24 hours.",
 
                 // Footer
                 footerDesc: "Independent technical expertise dedicated to manufacturing oversight, quality control, visual inspections, and acceptance testing of hydroelectric generators.",
@@ -768,7 +762,6 @@
             document.getElementById('lbl-msg').innerText = t.lblMsg;
             document.getElementById('input-msg').placeholder = t.inputMsgPh;
             document.getElementById('form-btn').innerText = t.formBtn;
-            document.getElementById('form-success').innerText = t.formSuccess;
 
             // Footer
             document.getElementById('footer-desc').innerText = t.footerDesc;
@@ -807,34 +800,6 @@
                 }
             });
         }
-
-        async function submitForm(e) {
-            e.preventDefault();
-            const form = e.target;
-            const data = new FormData(form);
-            
-            try {
-                const response = await fetch(form.action, {
-                    method: form.method,
-                    body: data,
-                    headers: {
-                        'Accept': 'application/json'
-                    }
-                });
-                
-                if (response.ok) {
-                    form.reset();
-                    document.getElementById('form-success').classList.remove('hidden');
-                } else {
-                    alert("Une erreur est survenue lors de l'envoi. Veuillez réessayer.");
-                }
-            } catch (error) {
-                alert("Erreur de connexion lors de l'envoi du formulaire.");
-            }
-        }
     </script>
 </body>
 </html>
-```[cite: 8]
-
-Il te suffit de remplacer ton fichier `index.html` sur ton dépôt GitHub avec ce code[cite: 8]. Tes futurs messages de contact arriveront directement sur `contact@hydroalt-consulting.com`.
