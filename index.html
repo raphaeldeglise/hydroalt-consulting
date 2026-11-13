@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="doc-title">HydroAlt Consulting | Expert Indépendant Alternateurs Hydroélectriques</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            blue: '#0B2545',
+                            accent: '#134074',
+                            cyan: '#00A8E8',
+                            gold: '#D4AF37',
+                            light: '#EEF4F8'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+
+    <!-- Header / Navigation -->
+    <header class="sticky top-0 z-50 bg-brand-blue text-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-20">
+            <div class="flex items-center space-x-3">
+                <!-- Logo Vectoriel HA -->
+                <div class="bg-white p-2 rounded-lg shadow-sm">
+                    <svg class="w-9 h-9" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M 22 20 L 22 80 M 22 50 L 52 50 C 65 50 78 30 78 20 C 78 50 52 65 78 80" stroke="#0B2545" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M 22 52 C 35 42 45 42 55 52 C 65 62 75 62 85 52" stroke="#00A8E8" stroke-width="5" fill="none"/>
+                        <path d="M 78 18 C 78 18 84 26 84 30 C 84 33 81 36 78 36 C 75 36 72 33 72 30 C 72 26 78 18 78 18 Z" fill="#00A8E8"/>
+                        <path d="M 50 44 L 46 52 L 51 52 L 47 60" stroke="#D4AF37" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                    </svg>
+                </div>
+                <div>
+                    <span class="text-2xl font-bold tracking-wider block leading-none">HydroAlt</span>
+                    <span class="text-xs text-brand-cyan tracking-widest uppercase font-semibold">Consulting</span>
+                </div>
+            </div>
+
+            <nav class="hidden md:flex space-x-8 text-sm font-medium">
+                <a href="#about" class="hover:text-brand-cyan transition" id="nav-about">À propos</a>
+                <a href="#services" class="hover:text-brand-cyan transition" id="nav-services">Expertise</a>
+                <a href="#projects" class="hover:text-brand-cyan transition" id="nav-projects">Projets & Clients</a>
+                <a href="#manufacturers" class="hover:text-brand-cyan transition" id="nav-mfg">Constructeurs Audités</a>
+                <a href="#contact" class="hover:text-brand-cyan transition" id="nav-contact">Contact</a>
+            </nav>
+
+            <div class="flex items-center space-x-4">
+                <button onclick="toggleLanguage()" id="lang-btn" class="bg-brand-accent hover:bg-brand-cyan hover:text-brand-blue text-white text-xs font-bold py-1.5 px-3 rounded border border-brand-cyan transition">
+                    English / Français
+                </button>
+                <a href="#contact" class="bg-brand-cyan hover:bg-sky-400 text-brand-blue font-bold px-4 py-2 rounded-lg shadow transition text-sm hidden sm:inline-block" id="btn-quote">
+                    Demander une expertise
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative bg-gradient-to-r from-brand-blue to-brand-accent text-white py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="max-w-3xl">
+                <span class="inline-block bg-brand-cyan/20 text-brand-cyan text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-4 border border-brand-cyan/40" id="hero-badge">
+                    Raphaël Déglise-Favre — Expert Indépendant
+                </span>
+                <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight mb-6 leading-tight" id="hero-title">
+                    Suivi de Fabrication & Contrôle Qualité des Alternateurs Hydroélectriques
+                </h1>
+                <p class="text-lg text-gray-200 mb-8" id="hero-subtitle">
+                    Revue documentaire en amont de la fabrication, suivi de fabrication en usine sur les composants du Stator (bobinage et circuit magnétique) et du Rotor (bobines et masse polaire), suivi des essais électriques sur ces composants en cours de fabrication, suivi des non-conformités jusqu’à la réception de l’alternateur sur site pour tous vos projets hydroélectriques.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#contact" class="bg-brand-cyan hover:bg-sky-400 text-brand-blue font-bold px-6 py-3 rounded-lg shadow-lg transition" id="hero-cta-1">
+                        Organiser une inspection usine
+                    </a>
+                    <a href="#projects" class="bg-transparent hover:bg-white/10 text-white font-semibold px-6 py-3 rounded-lg border border-white/30 transition" id="hero-cta-2">
+                        Consulter les références
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Metrics / Stats -->
+    <section class="bg-white py-10 shadow-sm border-b">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+            <div>
+                <p class="text-3xl font-extrabold text-brand-blue" id="stat-val-1">Global</p>
+                <p class="text-xs text-gray-500 uppercase tracking-wider mt-1" id="stat-1">Tous Projets</p>
+            </div>
+            <div>
+                <p class="text-3xl font-extrabold text-brand-blue" id="stat-val-2">15+ Usines</p>
+                <p class="text-xs text-gray-500 uppercase tracking-wider mt-1" id="stat-2">Usines Auditées</p>
+            </div>
+            <div>
+                <p class="text-3xl font-extrabold text-brand-blue" id="stat-val-3">Monde</p>
+                <p class="text-xs text-gray-500 uppercase tracking-wider mt-1" id="stat-3">Interventions Globales</p>
+            </div>
+            <div>
+                <p class="text-3xl font-extrabold text-brand-blue" id="stat-val-4">100%</p>
+                <p class="text-xs text-gray-500 uppercase tracking-wider mt-1" id="stat-4">Spécialisé Hydroélectricité</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl font-bold text-brand-blue mb-4" id="about-title">L'Expertise HydroAlt Consulting</h2>
+                    <p class="text-gray-600 mb-4 leading-relaxed" id="about-p1">
+                        Fort d'une expérience pointue auprès des plus grands donneurs d'ordre (EDF, Rio Tinto, Hydro-Québec, …) et équipementiers hydroélectriques mondiaux (Andritz, GE, Donako, Jone Orti, …), HydroAlt Consulting propose une surveillance technique rigoureuse lors des phases critiques de fabrication et de recette des alternateurs.
+                    </p>
+                    <p class="text-gray-600 mb-6 leading-relaxed" id="about-p2">
+                        De la découpe des tôles magnétiques et de la fabrication du bobinage (barres Roebel ou bobinage à spires) jusqu'aux essais électriques complets en plate-forme d'essai, nous garantissons la conformité absolue aux normes internationales (IEC, IEEE) et à vos cahiers des charges.
+                    </p>
+                    <div class="space-y-3">
+                        <div class="flex items-start space-x-3">
+                            <i class="fa-solid fa-circle-check text-brand-cyan mt-1"></i>
+                            <span class="text-sm text-gray-700" id="feat-1">Inspection visuelle et contrôle dimensionnel rigoureux des stators et rotors.</span>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <i class="fa-solid fa-circle-check text-brand-cyan mt-1"></i>
+                            <span class="text-sm text-gray-700" id="feat-2">Supervision des essais haute et basse tension (résistance d'isolement, impédance, décharges partielles, onde de choc, tangente Delta, …).</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-brand-light p-8 rounded-2xl border border-sky-100">
+                    <h3 class="text-xl font-bold text-brand-blue mb-4" id="dom-title">Domaines d'Intervention Industrielle</h3>
+                    <ul class="space-y-4 text-sm text-gray-700">
+                        <li class="p-3 bg-white rounded-lg shadow-sm">
+                            <strong class="text-brand-accent block" id="dom-1-t">Projets Hydroélectriques</strong>
+                            <span id="dom-1-d">Station de Transfert d’Energie par Pompage (STEP)</span>
+                        </li>
+                        <li class="p-3 bg-white rounded-lg shadow-sm">
+                            <strong class="text-brand-accent block" id="dom-2-t">Audit de Fabrication en Usine</strong>
+                            <span id="dom-2-d">Vérification des processus de fabrication, qualification des fournisseurs et sous-traitants.</span>
+                        </li>
+                        <li class="p-3 bg-white rounded-lg shadow-sm">
+                            <strong class="text-brand-accent block" id="dom-3-t">Inspections Visuelles & Protocoles d'Essais</strong>
+                            <span id="dom-3-d">Suivi des contrôles visuels de réception, supervision des essais basse et haute tension.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <h2 class="text-3xl font-bold text-brand-blue" id="serv-title">Services d'Inspection & Protocoles d'Essais</h2>
+                <p class="text-gray-600 mt-2" id="serv-sub">Un accompagnement sur mesure intégrant l'inspection visuelle et la validation complète des essais électriques.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Service 1: Inspection Visuelle -->
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-sky-100 text-brand-blue rounded-lg flex items-center justify-center mb-4 text-xl">
+                        <i class="fa-solid fa-eye"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-brand-blue mb-2" id="s1-t">Inspection Visuelle & Métrologie</h3>
+                    <p class="text-sm text-gray-600" id="s1-d">Inspection visuelle, dimensionnelle et géométrique des tôles du circuit magnétique, des barres Roebel, des bobines à spires, des bobines polaires et des masses polaires.</p>
+                </div>
+
+                <!-- Service 2: Essais BT -->
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-sky-100 text-brand-blue rounded-lg flex items-center justify-center mb-4 text-xl">
+                        <i class="fa-solid fa-wave-square"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-brand-blue mb-2" id="s2-t">Essais Basse Tension (BT)</h3>
+                    <p class="text-sm text-gray-600" id="s2-d">Supervision des essais de résistance d'isolement, résistance ohmique des enroulements, magnétisation du circuit magnétique, impédance, …</p>
+                </div>
+
+                <!-- Service 3: Essais HT -->
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-sky-100 text-brand-blue rounded-lg flex items-center justify-center mb-4 text-xl">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-brand-blue mb-2" id="s3-t">Essais Haute Tension (HT)</h3>
+                    <p class="text-sm text-gray-600" id="s3-d">Supervision des essais de tenue diélectrique, de mesure du facteur de dissipation (Tan Delta), de mesures des décharges partielles, des essais onde de choc sur les bobines du stator ainsi que les bobines polaires. Contrôle de l’effet Corona à la caméra UV.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <h2 class="text-3xl font-bold text-brand-blue" id="proj-title">Projets Récents & Références</h2>
+                <p class="text-gray-600 mt-2" id="proj-sub">Découvrez quelques interventions emblématiques réalisées sur des alternateurs hydroélectriques d'envergure.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1: FengNing -->
+                <div class="border rounded-xl p-6 bg-white shadow-sm hover:border-brand-cyan transition">
+                    <span class="text-xs font-bold text-brand-cyan bg-sky-50 px-2.5 py-1 rounded" id="p1-tag">Chine / STEP</span>
+                    <h3 class="font-bold text-xl text-brand-blue mt-3">STEP Fengning</h3>
+                    <p class="text-sm text-gray-600 mt-2" id="p1-desc">Suivi de fabrication d'alternateurs pour la plus grande centrale de pompage-turbinage du monde (3 600 MW).</p>
+                    <div class="mt-4 pt-4 border-t text-xs text-gray-500 flex justify-between">
+                        <span id="p1-tech">Technologie: STEP / Vitesse Variable</span>
+                        <span class="font-semibold text-brand-blue">300 MW / Unité</span>
+                    </div>
+                </div>
+
+                <!-- Project 2: Snowy Hydro -->
+                <div class="border rounded-xl p-6 bg-white shadow-sm hover:border-brand-cyan transition">
+                    <span class="text-xs font-bold text-brand-cyan bg-sky-50 px-2.5 py-1 rounded" id="p2-tag">Australie</span>
+                    <h3 class="font-bold text-xl text-brand-blue mt-3">Snowy Hydro</h3>
+                    <p class="text-sm text-gray-600 mt-2" id="p2-desc">Suivi de la fabrication de 120 pôles rotor répartis sur 10 unités hydroélectriques majeures.</p>
+                    <div class="mt-4 pt-4 border-t text-xs text-gray-500 flex justify-between">
+                        <span id="p2-tech">Composants: 120 Pôles Rotor</span>
+                        <span class="font-semibold text-brand-blue" id="p2-unit">10 Unités</span>
+                    </div>
+                </div>
+
+                <!-- Project 3: Hatta -->
+                <div class="border rounded-xl p-6 bg-white shadow-sm hover:border-brand-cyan transition">
+                    <span class="text-xs font-bold text-brand-cyan bg-sky-50 px-2.5 py-1 rounded" id="p3-tag">Émirats Arabes Unis</span>
+                    <h3 class="font-bold text-xl text-brand-blue mt-3">STEP Hatta (250 MW)</h3>
+                    <p class="text-sm text-gray-600 mt-2" id="p3-desc">Suivi de fabrication des alternateurs en usine pour la première centrale de pompage-turbinage de la région du Golfe.</p>
+                    <div class="mt-4 pt-4 border-t text-xs text-gray-500 flex justify-between">
+                        <span id="p3-tech">Technologie: Vitesse Variable</span>
+                        <span class="font-semibold text-brand-blue">250 MW</span>
+                    </div>
+                </div>
+
+                <!-- Project 4: EDF -->
+                <div class="border rounded-xl p-6 bg-white shadow-sm hover:border-brand-cyan transition">
+                    <span class="text-xs font-bold text-brand-cyan bg-sky-50 px-2.5 py-1 rounded" id="p4-tag">France / EDF</span>
+                    <h3 class="font-bold text-xl text-brand-blue mt-3" id="p4-title">Parc Hydroélectrique EDF</h3>
+                    <p class="text-sm text-gray-600 mt-2" id="p4-desc">Suivi de fabrication de stators neufs et réhabilitation de grands alternateurs du parc français.</p>
+                    <div class="mt-4 pt-4 border-t text-xs text-gray-500 flex justify-between">
+                        <span id="p4-tech">Clients: EDF / Turbiniers</span>
+                        <span class="font-semibold text-brand-blue">Multi-sites</span>
+                    </div>
+                </div>
+
+                <!-- Project 5: Rio Tinto -->
+                <div class="border rounded-xl p-6 bg-white shadow-sm hover:border-brand-cyan transition">
+                    <span class="text-xs font-bold text-brand-cyan bg-sky-50 px-2.5 py-1 rounded" id="p5-tag">International</span>
+                    <h3 class="font-bold text-xl text-brand-blue mt-3">Rio Tinto Hydro</h3>
+                    <p class="text-sm text-gray-600 mt-2" id="p5-desc">Suivi de fabrication et réception des stators en usine pour des alternateurs alimentant les installations industrielles.</p>
+                    <div class="mt-4 pt-4 border-t text-xs text-gray-500 flex justify-between">
+                        <span id="p5-tech">Client: Rio Tinto</span>
+                        <span class="font-semibold text-brand-blue" id="p5-unit">Toutes Puissances</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Manufacturers Filter Section -->
+    <section id="manufacturers" class="py-16 bg-brand-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-10">
+                <h2 class="text-3xl font-bold text-brand-blue" id="mfg-title">Usines & Constructeurs Audités</h2>
+                <p class="text-gray-600 mt-2" id="mfg-sub">Filtrer les sites de fabrication d'alternateurs où nous sommes intervenus pour des audits et contrôles usine.</p>
+            </div>
+
+            <!-- Filter Buttons -->
+            <div class="flex justify-center flex-wrap gap-2 mb-8">
+                <button onclick="filterMfg('all')" class="mfg-btn active bg-brand-blue text-white px-4 py-2 rounded-lg text-sm font-semibold transition" data-filter="all" id="btn-mfg-all">Tous</button>
+                <button onclick="filterMfg('europe')" class="mfg-btn bg-white text-gray-700 hover:bg-gray-100 px-4 py-2 rounded-lg text-sm font-semibold transition" data-filter="europe" id="btn-mfg-eur">Europe</button>
+                <button onclick="filterMfg('asia')" class="mfg-btn bg-white text-gray-700 hover:bg-gray-100 px-4 py-2 rounded-lg text-sm font-semibold transition" data-filter="asia" id="btn-mfg-asia">Asie & Moyen-Orient</button>
+                <button onclick="filterMfg('americas')" class="mfg-btn bg-white text-gray-700 hover:bg-gray-100 px-4 py-2 rounded-lg text-sm font-semibold transition" data-filter="americas" id="btn-mfg-ame">Amériques</button>
+            </div>
+
+            <!-- Grid -->
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4" id="mfg-grid">
+                <div class="mfg-card europe bg-white p-4 rounded-lg shadow-sm border border-gray-200">
+                    <span class="text-xs text-gray-400 uppercase font-bold" id="mfg-1-loc">Europe — Autriche / Allemagne</span>
+                    <h4 class="font-bold text-brand-blue text-lg">Andritz Hydro</h4>
+                    <p class="text-xs text-gray-600 mt-1" id="mfg-1-desc">Suivi de fabrication stators et rotors.</p>
+                </div>
+
+                <div class="mfg-card europe bg-white p-4 rounded-lg shadow-sm border border-gray-200">
+                    <span class="text-xs text-gray-400 uppercase font-bold" id="mfg-2-loc">Europe — Croatie</span>
+                    <h4 class="font-bold text-brand-blue text-lg">Končar</h4>
+                    <p class="text-xs text-gray-600 mt-1" id="mfg-2-desc">Suivi de fabrication stators et rotors.</p>
+                </div>
+
+                <div class="mfg-card europe bg-white p-4 rounded-lg shadow-sm border border-gray-200">
+                    <span class="text-xs text-gray-400 uppercase font-bold" id="mfg-3-loc">Europe — Pologne</span>
+                    <h4 class="font-bold text-brand-blue text-lg">Donako Wroclaw</h4>
+                    <p class="text-xs text-gray-600 mt-1" id="mfg-3-desc">Suivi de fabrication des tôles du circuit magnétique.</p>
+                </div>
+
+                <div class="mfg-card europe bg-white p-4 rounded-lg shadow-sm border border-gray-200">
+                    <span class="text-xs text-gray-400 uppercase font-bold" id="mfg-4-loc">Europe — France</span>
+                    <h4 class="font-bold text-brand-blue text-lg">Jone Orti</h4>
+                    <p class="text-xs text-gray-600 mt-1" id="mfg-4-desc">Suivi de fabrication stators et rotors.</p>
+                </div>
+
+                <div class="mfg-card europe bg-white p-4 rounded-lg shadow-sm border border-gray-200">
+                    <span class="text-xs text-gray-400 uppercase font-bold" id="mfg-5-loc">Europe — France</span>
+                    <h4 class="font-bold text-brand-blue text-lg">TDV</h4>
+                    <p class="text-xs text-gray-600 mt-1" id="mfg-5-desc">Suivi du soudage (laser) des distanceurs sur les tôles de ventilations.</p>
+                </div>
+
+                <div class="mfg-card asia bg-white p-4 rounded-lg shadow-sm border border-gray-200">
+                    <span class="text-xs text-gray-400 uppercase font-bold" id="mfg-6-loc">Asie — Inde</span>
+                    <h4 class="font-bold text-brand-blue text-lg">Andritz Hydro Mandideep</h4>
+                    <p class="text-xs text-gray-600 mt-1" id="mfg-6-desc">Suivi de fabrication stators et rotors.</p>
+                </div>
+
+                <div class="mfg-card americas bg-white p-4 rounded-lg shadow-sm border border-gray-200">
+                    <span class="text-xs text-gray-400 uppercase font-bold" id="mfg-7-loc">Amériques — Brésil</span>
+                    <h4 class="font-bold text-brand-blue text-lg">GE Hydro Taubaté</h4>
+                    <p class="text-xs text-gray-600 mt-1" id="mfg-7-desc">Suivi de fabrication stators et rotors.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section / Form -->
+    <section id="contact" class="py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-bold text-brand-blue" id="form-title">Demander une Intervention ou un Audit</h2>
+                <p class="text-gray-600 mt-2" id="form-sub">Formulez votre besoin d'inspection en usine ou de contrôle qualité d'alternateurs.</p>
+            </div>
+
+            <form id="inspection-form" class="bg-gray-50 p-8 rounded-2xl border border-gray-200 shadow-sm space-y-6" onsubmit="submitForm(event)">
+                <div class="grid sm:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-xs font-bold text-gray-700 uppercase mb-2" id="lbl-name">Nom complet *</label>
+                        <input type="text" required class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-cyan focus:outline-none" placeholder="Ing. Jean Dupont" id="input-name">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-gray-700 uppercase mb-2" id="lbl-company">Société / Organisation *</label>
+                        <input type="text" required class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-cyan focus:outline-none" placeholder="EDF, Rio Tinto, Andritz..." id="input-company">
+                    </div>
+                </div>
+
+                <div class="grid sm:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-xs font-bold text-gray-700 uppercase mb-2" id="lbl-email">Email professionnel *</label>
+                        <input type="email" required class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-cyan focus:outline-none" placeholder="j.dupont@company.com">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-gray-700 uppercase mb-2" id="lbl-type">Type de Mission</label>
+                        <select class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-cyan focus:outline-none bg-white" id="select-type">
+                            <option value="0">Revue documentaire</option>
+                            <option value="1">Inspections en usine</option>
+                            <option value="2">Demande libre</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold text-gray-700 uppercase mb-2" id="lbl-msg">Détails de la mission (Projet, site, planning)</label>
+                    <textarea rows="4" class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-cyan focus:outline-none" placeholder="Ex: Inspection visuelle et essais BT/HT pour alternateurs..." id="input-msg"></textarea>
+                </div>
+
+                <button type="submit" class="w-full bg-brand-blue hover:bg-brand-accent text-white font-bold py-3.5 rounded-lg shadow-md transition" id="form-btn">
+                    Envoyer la demande d'expertise
+                </button>
+            </form>
+
+            <div id="form-success" class="hidden mt-6 p-4 bg-green-50 border border-green-200 text-green-800 rounded-lg text-center font-medium">
+                Votre demande a bien été envoyée. HydroAlt Consulting vous recontactera sous 24h.
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-blue text-white py-12 border-t border-brand-accent">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-3 gap-8">
+            <div>
+                <div class="flex items-center space-x-2 mb-4">
+                    <span class="text-xl font-bold">HydroAlt Consulting</span>
+                </div>
+                <p class="text-xs text-gray-400 leading-relaxed" id="footer-desc">
+                    Expertise technique indépendante dédiée au suivi de fabrication, au contrôle qualité, inspections visuelles et essais de recette d'alternateurs hydroélectriques.
+                </p>
+            </div>
+            <div>
+                <h4 class="text-sm font-bold text-brand-cyan uppercase tracking-wider mb-4" id="footer-contact-title">Contact Direct</h4>
+                <p class="text-xs text-gray-300"><strong>Raphaël Déglise-Favre</strong></p>
+                <p class="text-xs text-gray-300 mt-1" id="footer-role">Expert Indépendant Alternateurs Hydroélectriques</p>
+                <p class="text-xs text-gray-300 mt-2"><i class="fa-solid fa-envelope text-brand-cyan mr-2"></i>contact@hydroalt-consulting.com</p>
+            </div>
+            <div>
+                <h4 class="text-sm font-bold text-brand-cyan uppercase tracking-wider mb-4" id="footer-nav-title">Navigation</h4>
+                <ul class="text-xs space-y-2 text-gray-300">
+                    <li><a href="#about" class="hover:underline" id="f-nav-1">À propos</a></li>
+                    <li><a href="#services" class="hover:underline" id="f-nav-2">Services</a></li>
+                    <li><a href="#projects" class="hover:underline" id="f-nav-3">Références Projets</a></li>
+                    <li><a href="#manufacturers" class="hover:underline" id="f-nav-4">Constructeurs Audités</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 pt-6 border-t border-white/10 text-center text-xs text-gray-400" id="footer-copy">
+            &copy; 2026 HydroAlt Consulting (Raphaël Déglise-Favre). Tous droits réservés.
+        </div>
+    </footer>
+
+    <!-- Interactive Scripts -->
+    <script>
+        let currentLang = 'fr';
+
+        const i18n = {
+            fr: {
+                docTitle: "HydroAlt Consulting | Expert Indépendant Alternateurs Hydroélectriques",
+                navAbout: "À propos",
+                navServices: "Expertise",
+                navProjects: "Projets & Clients",
+                navMfg: "Constructeurs Audités",
+                navContact: "Contact",
+                btnQuote: "Demander une expertise",
+                heroBadge: "Raphaël Déglise-Favre — Expert Indépendant",
+                heroTitle: "Suivi de Fabrication & Contrôle Qualité des Alternateurs Hydroélectriques",
+                heroSub: "Revue documentaire en amont de la fabrication, suivi de fabrication en usine sur les composants du Stator (bobinage et circuit magnétique) et du Rotor (bobines et masse polaire), suivi des essais électriques sur ces composants en cours de fabrication, suivi des non-conformités jusqu’à la réception de l’alternateur sur site pour tous vos projets hydroélectriques.",
+                heroCta1: "Organiser une inspection usine",
+                heroCta2: "Consulter les références",
+                stat1: "Tous Projets",
+                stat2: "Usines Auditées",
+                stat3: "Interventions Globales",
+                stat4: "Spécialisé Hydroélectricité",
+                
+                // About
+                aboutTitle: "L'Expertise HydroAlt Consulting",
+                aboutP1: "Fort d'une expérience pointue auprès des plus grands donneurs d'ordre (EDF, Rio Tinto, Hydro-Québec, …) et équipementiers hydroélectriques mondiaux (Andritz, GE, Donako, Jone Orti, …), HydroAlt Consulting propose une surveillance technique rigoureuse lors des phases critiques de fabrication et de recette des alternateurs.",
+                aboutP2: "De la découpe des tôles magnétiques et de la fabrication du bobinage (barres Roebel ou bobinage à spires) jusqu'aux essais électriques complets en plate-forme d'essai, nous garantissons la conformité absolue aux normes internationales (IEC, IEEE) et à vos cahiers des charges.",
+                feat1: "Inspection visuelle et contrôle dimensionnel rigoureux des stators et rotors.",
+                feat2: "Supervision des essais haute et basse tension (résistance d'isolement, impédance, décharges partielles, onde de choc, tangente Delta, …).",
+                domTitle: "Domaines d'Intervention Industrielle",
+                dom1T: "Projets Hydroélectriques",
+                dom1D: "Station de Transfert d’Energie par Pompage (STEP)",
+                dom2T: "Audit de Fabrication en Usine",
+                dom2D: "Vérification des processus de fabrication, qualification des fournisseurs et sous-traitants.",
+                dom3T: "Inspections Visuelles & Protocoles d'Essais",
+                dom3D: "Suivi des contrôles visuels de réception, supervision des essais basse et haute tension.",
+
+                // Services
+                servTitle: "Services d'Inspection & Protocoles d'Essais",
+                servSub: "Un accompagnement sur mesure intégrant l'inspection visuelle et la validation complète des essais électriques.",
+                s1T: "Inspection Visuelle & Métrologie",
+                s1D: "Inspection visuelle, dimensionnelle et géométrique des tôles du circuit magnétique, des barres Roebel, des bobines à spires, des bobines polaires et des masses polaires.",
+                s2T: "Essais Basse Tension (BT)",
+                s2D: "Supervision des essais de résistance d'isolement, résistance ohmique des enroulements, magnétisation du circuit magnétique, impédance, …",
+                s3T: "Essais Haute Tension (HT)",
+                s3D: "Supervision des essais de tenue diélectrique, de mesure du facteur de dissipation (Tan Delta), de mesures des décharges partielles, des essais onde de choc sur les bobines du stator ainsi que les bobines polaires. Contrôle de l’effet Corona à la caméra UV.",
+
+                // Projects
+                projTitle: "Projets Récents & Références",
+                projSub: "Découvrez quelques interventions emblématiques réalisées sur des alternateurs hydroélectriques d'envergure.",
+                p1Tag: "Chine / STEP",
+                p1Desc: "Suivi de fabrication d'alternateurs pour la plus grande centrale de pompage-turbinage du monde (3 600 MW).",
+                p1Tech: "Technologie: STEP / Vitesse Variable",
+                p2Tag: "Australie",
+                p2Desc: "Suivi de la fabrication de 120 pôles rotor répartis sur 10 unités hydroélectriques majeures.",
+                p2Tech: "Composants: 120 Pôles Rotor",
+                p2Unit: "10 Unités",
+                p3Tag: "Émirats Arabes Unis",
+                p3Desc: "Suivi de fabrication des alternateurs en usine pour la première centrale de pompage-turbinage de la région du Golfe.",
+                p3Tech: "Technologie: Vitesse Variable",
+                p4Tag: "France / EDF",
+                p4Title: "Parc Hydroélectrique EDF",
+                p4Desc: "Suivi de fabrication de stators neufs et réhabilitation de grands alternateurs du parc français.",
+                p4Tech: "Clients: EDF / Turbiniers",
+                p5Tag: "International",
+                p5Desc: "Suivi de fabrication et réception des stators en usine pour des alternateurs alimentant les installations industrielles.",
+                p5Tech: "Client: Rio Tinto",
+                p5Unit: "Toutes Puissances",
+
+                // Manufacturers
+                mfgTitle: "Usines & Constructeurs Audités",
+                mfgSub: "Filtrer les sites de fabrication d'alternateurs où nous sommes intervenus pour des audits et contrôles usine.",
+                btnMfgAll: "Tous",
+                btnMfgEur: "Europe",
+                btnMfgAsia: "Asie & Moyen-Orient",
+                btnMfgAme: "Amériques",
+                mfg1Loc: "Europe — Autriche / Allemagne",
+                mfg1Desc: "Suivi de fabrication stators et rotors.",
+                mfg2Loc: "Europe — Croatie",
+                mfg2Desc: "Suivi de fabrication stators et rotors.",
+                mfg3Loc: "Europe — Pologne",
+                mfg3Desc: "Suivi de fabrication des tôles du circuit magnétique.",
+                mfg4Loc: "Europe — France",
+                mfg4Desc: "Suivi de fabrication stators et rotors.",
+                mfg5Loc: "Europe — France",
+                mfg5Desc: "Suivi du soudage (laser) des distanceurs sur les tôles de ventilations.",
+                mfg6Loc: "Asie — Inde",
+                mfg6Desc: "Suivi de fabrication stators et rotors.",
+                mfg7Loc: "Amériques — Brésil",
+                mfg7Desc: "Suivi de fabrication stators et rotors.",
+
+                // Form
+                formTitle: "Demander une Intervention ou un Audit",
+                formSub: "Formulez votre besoin d'inspection en usine ou de contrôle qualité d'alternateurs.",
+                lblName: "Nom complet *",
+                inputNamePh: "Ing. Jean Dupont",
+                lblCompany: "Société / Organisation *",
+                inputCompanyPh: "EDF, Rio Tinto, Andritz...",
+                lblEmail: "Email professionnel *",
+                lblType: "Type de Mission",
+                opt0: "Revue documentaire",
+                opt1: "Inspections en usine",
+                opt2: "Demande libre",
+                lblMsg: "Détails de la mission (Projet, site, planning)",
+                inputMsgPh: "Ex: Inspection visuelle et essais BT/HT pour alternateurs...",
+                formBtn: "Envoyer la demande d'expertise",
+                formSuccess: "Votre demande a bien été envoyée. HydroAlt Consulting vous recontactera sous 24h.",
+
+                // Footer
+                footerDesc: "Expertise technique indépendante dédiée au suivi de fabrication, au contrôle qualité, inspections visuelles et essais de recette d'alternateurs hydroélectriques.",
+                footerContactTitle: "Contact Direct",
+                footerRole: "Expert Indépendant Alternateurs Hydroélectriques",
+                footerNavTitle: "Navigation",
+                fNav1: "À propos",
+                fNav2: "Services",
+                fNav3: "Références Projets",
+                fNav4: "Constructeurs Audités",
+                footerCopy: "© 2026 HydroAlt Consulting (Raphaël Déglise-Favre). Tous droits réservés."
+            },
+            en: {
+                docTitle: "HydroAlt Consulting | Independent Hydroelectric Generator Expert",
+                navAbout: "About Us",
+                navServices: "Expertise",
+                navProjects: "Projects & Clients",
+                navMfg: "Audited Factories",
+                navContact: "Contact",
+                btnQuote: "Request Inspection",
+                heroBadge: "Raphaël Déglise-Favre — Independent Expert",
+                heroTitle: "Manufacturing Oversight & Quality Control for Hydroelectric Generators",
+                heroSub: "Documentary review prior to manufacturing, factory manufacturing oversight on Stator components (windings and magnetic core) and Rotor components (coils and pole bodies), electrical testing oversight during manufacturing, non-conformance tracking up to site acceptance of the generator for all your hydroelectric projects.",
+                heroCta1: "Arrange Factory Inspection",
+                heroCta2: "View References",
+                stat1: "All Projects",
+                stat2: "Audited Factories",
+                stat3: "Global Reach",
+                stat4: "100% Hydro Focused",
+                
+                // About
+                aboutTitle: "HydroAlt Consulting Expertise",
+                aboutP1: "Backed by extensive field experience with major owners (EDF, Rio Tinto, Hydro-Québec, …) and global hydro equipment OEMs (Andritz, GE, Donako, Jone Orti, …), HydroAlt Consulting provides rigorous technical oversight during critical generator manufacturing and testing phases.",
+                aboutP2: "From magnetic lamination stamping and winding manufacturing (Roebel bars or form-wound coils) to complete electrical test-bed procedures, we ensure full compliance with international standards (IEC, IEEE) and your technical specifications.",
+                feat1: "Visual inspection and precise dimensional verification of stators and rotors.",
+                feat2: "Supervision of high and low-voltage tests (insulation resistance, impedance, partial discharge, surge test, Tan Delta, …).",
+                domTitle: "Industrial Scope of Intervention",
+                dom1T: "Hydroelectric Projects",
+                dom1D: "Pumped Storage Plants (PSP)",
+                dom2T: "Factory Manufacturing Audits",
+                dom2D: "Verification of manufacturing processes, vendor & subcontractor qualification.",
+                dom3T: "Visual Inspections & Test Protocols",
+                dom3D: "Visual acceptance controls, low-voltage testing supervision, and high-voltage validation.",
+
+                // Services
+                servTitle: "Inspection Services & Testing Protocols",
+                servSub: "Tailored technical support integrating visual inspection and complete electrical test validation.",
+                s1T: "Visual Inspection & Metrology",
+                s1D: "Visual, dimensional, and geometrical inspection of magnetic core laminations, Roebel bars, form-wound coils, pole coils, and pole bodies.",
+                s2T: "Low-Voltage (LV) Testing",
+                s2D: "Supervision of insulation resistance, winding ohmic resistance, core magnetic flux, impedance, …",
+                s3T: "High-Voltage (HV) Testing",
+                s3D: "Supervision of dielectric withstand tests, dissipation factor (Tan Delta) measurements, partial discharge measurements, surge tests on stator and pole coils. UV camera Corona effect inspection.",
+
+                // Projects
+                projTitle: "Recent Projects & References",
+                projSub: "Discover key interventions carried out on hydroelectric generators worldwide.",
+                p1Tag: "China / Pumped Storage",
+                p1Desc: "Manufacturing oversight of generators for the world's largest pumped-storage plant (3,600 MW).",
+                p1Tech: "Technology: PSP / Variable Speed",
+                p2Tag: "Australia",
+                p2Desc: "Manufacturing oversight of 120 rotor poles across 10 major hydroelectric units.",
+                p2Tech: "Components: 120 Rotor Poles",
+                p2Unit: "10 Units",
+                p3Tag: "United Arab Emirates",
+                p3Desc: "Factory manufacturing oversight of generators for the Arabian Gulf region's first pumped-storage plant.",
+                p3Tech: "Technology: Variable Speed",
+                p4Tag: "France / EDF",
+                p4Title: "EDF Hydroelectric Fleet",
+                p4Desc: "Manufacturing oversight for new stators and major generator overhauls across the French hydro fleet.",
+                p4Tech: "Clients: EDF / Turbinemakers",
+                p5Tag: "International",
+                p5Desc: "Factory manufacturing oversight and stator acceptance for generators supplying large industrial complexes.",
+                p5Tech: "Client: Rio Tinto",
+                p5Unit: "All Capacities",
+
+                // Manufacturers
+                mfgTitle: "Audited Factories & Manufacturers",
+                mfgSub: "Filter the generator manufacturing plants where we have performed technical audits and shop inspections.",
+                btnMfgAll: "All",
+                btnMfgEur: "Europe",
+                btnMfgAsia: "Asia & Middle East",
+                btnMfgAme: "Americas",
+                mfg1Loc: "Europe — Austria / Germany",
+                mfg1Desc: "Manufacturing oversight of stators and rotors.",
+                mfg2Loc: "Europe — Croatia",
+                mfg2Desc: "Manufacturing oversight of stators and rotors.",
+                mfg3Loc: "Europe — Poland",
+                mfg3Desc: "Magnetic core lamination manufacturing oversight.",
+                mfg4Loc: "Europe — France",
+                mfg4Desc: "Manufacturing oversight of stators and rotors.",
+                mfg5Loc: "Europe — France",
+                mfg5Desc: "Laser welding oversight of spacers on ventilation laminations.",
+                mfg6Loc: "Asia — India",
+                mfg6Desc: "Manufacturing oversight of stators and rotors.",
+                mfg7Loc: "Americas — Brazil",
+                mfg7Desc: "Manufacturing oversight of stators and rotors.",
+
+                // Form
+                formTitle: "Request an Inspection or Technical Audit",
+                formSub: "Submit your requirements for shop inspection or generator quality control.",
+                lblName: "Full Name *",
+                inputNamePh: "Eng. John Doe",
+                lblCompany: "Company / Organization *",
+                inputCompanyPh: "EDF, Rio Tinto, Andritz...",
+                lblEmail: "Professional Email *",
+                lblType: "Type of Mission",
+                opt0: "Documentary review",
+                opt1: "Factory inspections",
+                opt2: "Open request",
+                lblMsg: "Mission Details (Project, location, schedule)",
+                inputMsgPh: "E.g.: Visual inspection and LV/HV testing for generators...",
+                formBtn: "Submit Expertise Request",
+                formSuccess: "Your request has been successfully sent. HydroAlt Consulting will contact you within 24 hours.",
+
+                // Footer
+                footerDesc: "Independent technical expertise dedicated to manufacturing oversight, quality control, visual inspections, and acceptance testing of hydroelectric generators.",
+                footerContactTitle: "Direct Contact",
+                footerRole: "Independent Hydroelectric Generator Expert",
+                footerNavTitle: "Navigation",
+                fNav1: "About Us",
+                fNav2: "Services",
+                fNav3: "Project References",
+                fNav4: "Audited Factories",
+                footerCopy: "© 2026 HydroAlt Consulting (Raphaël Déglise-Favre). All rights reserved."
+            }
+        };
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'fr' ? 'en' : 'fr';
+            const t = i18n[currentLang];
+
+            // Global
+            document.title = t.docTitle;
+            document.getElementById('nav-about').innerText = t.navAbout;
+            document.getElementById('nav-services').innerText = t.navServices;
+            document.getElementById('nav-projects').innerText = t.navProjects;
+            document.getElementById('nav-mfg').innerText = t.navMfg;
+            document.getElementById('nav-contact').innerText = t.navContact;
+            document.getElementById('btn-quote').innerText = t.btnQuote;
+
+            // Hero
+            document.getElementById('hero-badge').innerText = t.heroBadge;
+            document.getElementById('hero-title').innerText = t.heroTitle;
+            document.getElementById('hero-subtitle').innerText = t.heroSub;
+            document.getElementById('hero-cta-1').innerText = t.heroCta1;
+            document.getElementById('hero-cta-2').innerText = t.heroCta2;
+
+            // Stats
+            document.getElementById('stat-val-1').innerText = currentLang === 'fr' ? 'Global' : 'Global';
+            document.getElementById('stat-1').innerText = t.stat1;
+            document.getElementById('stat-val-2').innerText = currentLang === 'fr' ? '15+ Usines' : '15+ Factories';
+            document.getElementById('stat-2').innerText = t.stat2;
+            document.getElementById('stat-val-3').innerText = currentLang === 'fr' ? 'Monde' : 'Global';
+            document.getElementById('stat-3').innerText = t.stat3;
+            document.getElementById('stat-val-4').innerText = '100%';
+            document.getElementById('stat-4').innerText = t.stat4;
+
+            // About
+            document.getElementById('about-title').innerText = t.aboutTitle;
+            document.getElementById('about-p1').innerText = t.aboutP1;
+            document.getElementById('about-p2').innerText = t.aboutP2;
+            document.getElementById('feat-1').innerText = t.feat1;
+            document.getElementById('feat-2').innerText = t.feat2;
+            document.getElementById('dom-title').innerText = t.domTitle;
+            document.getElementById('dom-1-t').innerText = t.dom1T;
+            document.getElementById('dom-1-d').innerText = t.dom1D;
+            document.getElementById('dom-2-t').innerText = t.dom2T;
+            document.getElementById('dom-2-d').innerText = t.dom2D;
+            document.getElementById('dom-3-t').innerText = t.dom3T;
+            document.getElementById('dom-3-d').innerText = t.dom3D;
+
+            // Services
+            document.getElementById('serv-title').innerText = t.servTitle;
+            document.getElementById('serv-sub').innerText = t.servSub;
+            document.getElementById('s1-t').innerText = t.s1T;
+            document.getElementById('s1-d').innerText = t.s1D;
+            document.getElementById('s2-t').innerText = t.s2T;
+            document.getElementById('s2-d').innerText = t.s2D;
+            document.getElementById('s3-t').innerText = t.s3T;
+            document.getElementById('s3-d').innerText = t.s3D;
+
+            // Projects
+            document.getElementById('proj-title').innerText = t.projTitle;
+            document.getElementById('proj-sub').innerText = t.projSub;
+            document.getElementById('p1-tag').innerText = t.p1Tag;
+            document.getElementById('p1-desc').innerText = t.p1Desc;
+            document.getElementById('p1-tech').innerText = t.p1Tech;
+            document.getElementById('p2-tag').innerText = t.p2Tag;
+            document.getElementById('p2-desc').innerText = t.p2Desc;
+            document.getElementById('p2-tech').innerText = t.p2Tech;
+            document.getElementById('p2-unit').innerText = t.p2Unit;
+            document.getElementById('p3-tag').innerText = t.p3Tag;
+            document.getElementById('p3-desc').innerText = t.p3Desc;
+            document.getElementById('p3-tech').innerText = t.p3Tech;
+            document.getElementById('p4-tag').innerText = t.p4Tag;
+            document.getElementById('p4-title').innerText = t.p4Title;
+            document.getElementById('p4-desc').innerText = t.p4Desc;
+            document.getElementById('p4-tech').innerText = t.p4Tech;
+            document.getElementById('p5-tag').innerText = t.p5Tag;
+            document.getElementById('p5-desc').innerText = t.p5Desc;
+            document.getElementById('p5-tech').innerText = t.p5Tech;
+            document.getElementById('p5-unit').innerText = t.p5Unit;
+
+            // Manufacturers
+            document.getElementById('mfg-title').innerText = t.mfgTitle;
+            document.getElementById('mfg-sub').innerText = t.mfgSub;
+            document.getElementById('btn-mfg-all').innerText = t.btnMfgAll;
+            document.getElementById('btn-mfg-eur').innerText = t.btnMfgEur;
+            document.getElementById('btn-mfg-asia').innerText = t.btnMfgAsia;
+            document.getElementById('btn-mfg-ame').innerText = t.btnMfgAme;
+            document.getElementById('mfg-1-loc').innerText = t.mfg1Loc;
+            document.getElementById('mfg-1-desc').innerText = t.mfg1Desc;
+            document.getElementById('mfg-2-loc').innerText = t.mfg2Loc;
+            document.getElementById('mfg-2-desc').innerText = t.mfg2Desc;
+            document.getElementById('mfg-3-loc').innerText = t.mfg3Loc;
+            document.getElementById('mfg-3-desc').innerText = t.mfg3Desc;
+            document.getElementById('mfg-4-loc').innerText = t.mfg4Loc;
+            document.getElementById('mfg-4-desc').innerText = t.mfg4Desc;
+            document.getElementById('mfg-5-loc').innerText = t.mfg5Loc;
+            document.getElementById('mfg-5-desc').innerText = t.mfg5Desc;
+            document.getElementById('mfg-6-loc').innerText = t.mfg6Loc;
+            document.getElementById('mfg-6-desc').innerText = t.mfg6Desc;
+            document.getElementById('mfg-7-loc').innerText = t.mfg7Loc;
+            document.getElementById('mfg-7-desc').innerText = t.mfg7Desc;
+
+            // Form
+            document.getElementById('form-title').innerText = t.formTitle;
+            document.getElementById('form-sub').innerText = t.formSub;
+            document.getElementById('lbl-name').innerText = t.lblName;
+            document.getElementById('input-name').placeholder = t.inputNamePh;
+            document.getElementById('lbl-company').innerText = t.lblCompany;
+            document.getElementById('input-company').placeholder = t.inputCompanyPh;
+            document.getElementById('lbl-email').innerText = t.lblEmail;
+            document.getElementById('lbl-type').innerText = t.lblType;
+            
+            const selectType = document.getElementById('select-type');
+            selectType.options[0].text = t.opt0;
+            selectType.options[1].text = t.opt1;
+            selectType.options[2].text = t.opt2;
+
+            document.getElementById('lbl-msg').innerText = t.lblMsg;
+            document.getElementById('input-msg').placeholder = t.inputMsgPh;
+            document.getElementById('form-btn').innerText = t.formBtn;
+            document.getElementById('form-success').innerText = t.formSuccess;
+
+            // Footer
+            document.getElementById('footer-desc').innerText = t.footerDesc;
+            document.getElementById('footer-contact-title').innerText = t.footerContactTitle;
+            document.getElementById('footer-role').innerText = t.footerRole;
+            document.getElementById('footer-nav-title').innerText = t.footerNavTitle;
+            document.getElementById('f-nav-1').innerText = t.fNav1;
+            document.getElementById('f-nav-2').innerText = t.fNav2;
+            document.getElementById('f-nav-3').innerText = t.fNav3;
+            document.getElementById('f-nav-4').innerText = t.fNav4;
+            document.getElementById('footer-copy').innerText = t.footerCopy;
+
+            // Button label
+            document.getElementById('lang-btn').innerText = currentLang === 'fr' ? 'English / Français' : 'Français / English';
+        }
+
+        function filterMfg(category) {
+            const cards = document.querySelectorAll('.mfg-card');
+            const btns = document.querySelectorAll('.mfg-btn');
+
+            btns.forEach(btn => {
+                if (btn.getAttribute('data-filter') === category) {
+                    btn.classList.add('bg-brand-blue', 'text-white');
+                    btn.classList.remove('bg-white', 'text-gray-700');
+                } else {
+                    btn.classList.remove('bg-brand-blue', 'text-white');
+                    btn.classList.add('bg-white', 'text-gray-700');
+                }
+            });
+
+            cards.forEach(card => {
+                if (category === 'all' || card.classList.contains(category)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        function submitForm(e) {
+            e.preventDefault();
+            document.getElementById('inspection-form').reset();
+            document.getElementById('form-success').classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
