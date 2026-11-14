@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://hydroalt-consulting.com/sitemap.xml
